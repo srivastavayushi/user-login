@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useAlert } from 'react-alert'
+import styles from '../styles/Home.module.css'
 
 export default function Register(){
   
@@ -45,12 +46,8 @@ export default function Register(){
       };
 
   return (
-    <div className="container-fluid">
-      <h1 className="large text-primary">Register</h1>
-      <p className="lead">
-        <i className="fas fa-user" /> Create Your Account
-      </p>    
-      <form className="form" onSubmit={onSubmit}>
+    <div >
+      <form className={styles.description} onSubmit={onSubmit}>
         <div className="form-group">
           <input
             type="text"
@@ -58,6 +55,7 @@ export default function Register(){
             name="phone"
             value={phone}
             onChange={onChange}
+            className={styles.description}
           />
         </div>
         <div className="form-group">
@@ -67,10 +65,11 @@ export default function Register(){
             name="password"
             value={password}
             onChange={onChange}
+            className={styles.description}
           />
         </div>
 
-        <input type="submit" className="btn btn-primary" value="Register" />
+        <input type="submit" className={styles.description} value="Register" />
       </form>
     </div>
   );
